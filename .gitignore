@@ -1,0 +1,17 @@
+___pycache__
+*.pyc
+*.mo
+/.idea
+*.egg-info
+/bower_components
+/media/*
+/node_modules
+/newrelic.ini
+/snap/settings/current.py
+/static/*
+/venv
+.Trash*
+.DS_Store
+._.DS_Store
+/.imdone
+*.egg-info
