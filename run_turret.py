@@ -52,7 +52,7 @@ if __name__ == '__main__':
     height, width, channel = t_0.shape
     total = width * height
 
-    turrent_on = False
+    turret_on = False
 
     turret_surface = pygame.image.load('assets/turret.jpg')
     turret_firing_surface = pygame.image.load('assets/turret_firing.jpg')
@@ -84,13 +84,14 @@ if __name__ == '__main__':
         non_zeros = cv2.countNonZero(image_diff)
         ratio = non_zeros / total * 100
 
+
         msecs_since_start = pygame.time.get_ticks()
-        if msecs_since_start < 4000:
+        if msecs_since_start < 5000:
             threshold = ratio * 1.1
             screen.blit(turret_halted_surface, (width, 0))
         else:
-            if not turrent_on:
-                turrent_on = True
+            if not turret_on:
+                turret_on = True
                 boot_sound.play()
                 random.choice(deploy_sounds).play()
             if ratio > threshold:
